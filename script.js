@@ -80,4 +80,25 @@ function testEmailAddress(emailElement) {
   //  this.is@.a.bad.address.@fish.net.com.net
 
 
+
+  // NEW ASSIGNMENT 10/4/2020
+  // Add a phone number field
+  // Phone numbers should be strings of 10 characters
+  // (not including country code). Do not include dashes
+  // Phone numbers cannot start with 0
+  // If a phone number includes dashes, throw an error
+  // Phone numbers can only be digits 0-9
+
+  // VALID:
+  // 8582312382
+  // 8182340010
+  // 1231231234
+
+  // INVALID:
+  // 0982801094
+  // 19478109292
+  // 1-232-232-0041
+  // 0898120292
+
+
 submitButton.addEventListener('click', onClick);
