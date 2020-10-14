@@ -5,6 +5,7 @@ const submitButton = document.getElementById('submitButton');
 
 const emailElement = document.getElementById('email');
 
+const phoneElement = document.getElementById('phoneNum');
 /**
  * Checks to see if a string has 1 '@' sign and ends with .com
  * @param input - Email address to check
@@ -24,8 +25,10 @@ function isValidEmail(input) {
   return atSigns === 1 && input.endsWith('.com');
 }
 
+/** MUST ALWAYS USE "FOR LOOPS" TO BUILD APPROPRIATE FUNCTIONS OF INPUT TEXT*/
+
 function onClick(event) {
-  const target = event.target; // Im so confused by this --> document.getElementById('submitButton');
+  const target = event.target; document.getElementById('submitButton');
 
   if (firstNameElement.value.length === 0) {
     alert('First name value is required');
@@ -39,30 +42,36 @@ function onClick(event) {
   if (!isValidEmail(email)) {
     alert('Email is invalid');
   }
+  
+  const phonenum = phoneElement.value;
+  if (!isValidPhoneNumber(phonenum)) {
+    alert('Phone Number is invalid');
+  }
+  if (isValidPhoneNumber(phonenum)) {
+    alert('Phone Number is Valid');
+  }
 }
 
-function testEmailAddress(emailElement) {
 
-    var atSymbol = emailElement.indexOf("@");
-
-    if (atSymbol < 1) {
-      alert('Email requires an @ sign');
+function isValidPhoneNumber(input) {
+  
+  //let number = input.value;
+  if (input.length != 10) {
+    alert('Phone Number must be 10 digits only');
+    return false;
+  }
+  let dashSigns = 0;
+  for (let i = 0; i < input.length; i++) {
+    
+    const currentElement = input[i];
+    
+    if (currentElement === '-') {
+      dashSigns += 1;
     }
-    if (atSymbol > 1) {
-      alert('Email cannot have two @ signs');
-    }
-
-    var dot = emailElement.indexOf(".com");
-
-    if (dot !== 1) {
-      alert('Email must end in dot com');
-    }
-
-    if (dot === emailElement.length - 1) {
-     alert('Great job');
-    }
+  }
+  return dashSigns === 0 && input[0] != 0;
+  
 }
-
   // Email address needs:
   // a single '@'
   // ends in '.com'
