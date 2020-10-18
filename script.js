@@ -30,6 +30,22 @@ function isValidEmail(input) {
 function onClick(event) {
   const target = event.target;
 
+  // ASSIGNMENT 10/18/2020
+  // Get the same in-form elements showing error validations
+  // for:
+  // * Email Address field
+  // * Last Name field
+  // * Phone Number field
+
+  // EXTRA CREDIT - Make the errors pretty
+
+  // ACCEPTANCE CRITERIA
+  // Errors on fields should persist if the field is not corrent.
+  // Errors on fields should go away if the error is corrected and the "submit" button is clicked
+  // No alert() statements in the final product
+  // No console.log() statements in the final product
+  // No debugger; statements in the final product
+
   if (firstNameElement.value.length === 0) {
     if (!document.getElementById('firstNameError')) {
       // Create a <p> tag
