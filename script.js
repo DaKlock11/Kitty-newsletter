@@ -70,8 +70,45 @@ function onClick(event) {
   }
 
   if (lastNameElement.value.length === 0) {
-    alert('Last name value is required');
-  }
+    if (!document.getElementById('lastNameError')) {
+      
+      const lastNameError = document.createElement('p');
+      
+      lastNameError.innerHTML = 'Last name is invalid';
+      lastNameError.id = 'lastNameError';
+      lastNameError.classname = 'error';
+      
+      const parent = lastNameElement.parentElement;
+      parent.appendChild(lastNameError);
+    } 
+  } else {
+      const errorElement = document.getElementById('lastNameError');
+      if (errorElement) {
+        errorElement.remove();
+      }
+    }
+    //alert('Last name value is required');
+  
+  if (emailElement.value.length === 0) {
+    if (!document.getElementById('emailError')) {
+      
+      const emailError = document.createElement('p');
+      
+      emailError.innerHTML = 'email is invalid';
+      emailError.id = 'emailError';
+      emailError.classname = 'error';
+      
+      const parent = emailElement.parentElement;
+      parent.appendChild(emailErrorError);
+    } 
+  } else {
+      const errorElement = document.getElementById('emailError');
+      if (errorElement) {
+        errorElement.remove();
+      }
+    }
+    
+  
   const email = emailElement.value;
   if (!isValidEmail(email)) {
     alert('Email is invalid');
