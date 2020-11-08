@@ -67,6 +67,15 @@ select {
     width: 100%;
     height: auto;
   }
+  #firstNameError {
+    color: darkred;
+  }
+  #lastNameError {
+    color: darkred
+  }
+  #emailError {
+    color: darkred;
+  }
 
   .form-container {
     display: flex;

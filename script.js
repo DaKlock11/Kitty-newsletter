@@ -109,10 +109,10 @@ function onClick(event) {
     }
     
   
-  const email = emailElement.value;
+  /*const email = emailElement.value;
   if (!isValidEmail(email)) {
     alert('Email is invalid');
-  }
+  }*/
   const phonenum = phoneElement.value;
   if (!isValidPhoneNumber(phonenum)) {
     alert('Phone Number is invalid');
