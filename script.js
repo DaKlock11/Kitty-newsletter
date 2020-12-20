@@ -25,19 +25,22 @@ function isValidEmail(input) {
     return atSigns === 1 && input.endsWith('.com');
 }
 
+function validateEmail(email) {
+
+}
 
 // DRY - stands for "Don't Repeat Yourself"
 
 function validateField(element, fieldName) {
 
-    let validEmail;
+    // let validEmail;
     if (fieldName === 'email') {
-        validEmail = isValidEmail(element.value);
+        validateEmail(element.value);
+        // validEmail = isValidEmail(element.value);
+        return;
     }
 
-
-
-    if (element.value.length === 0 || !validEmail) {
+    if (element.value.length === 0) {
         if(!document.getElementById(fieldName + 'Error')) {
             const fieldNameError = document.createElement('p');
 
@@ -60,13 +63,10 @@ function validateField(element, fieldName) {
                     errorMessage = 'Last name is invalid';
                     break;
                 }
-                case 'email': {
-                    errorMessage = 'Email is invalid';
+                case 'phoneNum': {
+                    errorMessage = 'Phone Number is invalid';
                     break;
                 }
-              case 'phoneNum': {
-                    errorMessage = 'Phone Number is invalid';
-              }
             }
 
             fieldNameError.innerHTML = errorMessage;
@@ -116,7 +116,7 @@ function onClick(event) {
     // Use the validateField function to get the PhoneNumber field
     // working just like the 3 previous fields
 
-  
+
       //(OLD)This is an alert message function, previously used
     /*const phonenum = phoneElement.value;
     if (!isValidPhoneNumber(phonenum)) {
