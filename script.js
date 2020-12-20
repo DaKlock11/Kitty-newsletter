@@ -61,9 +61,12 @@ function validateField(element, fieldName) {
                     break;
                 }
                 case 'email': {
-                    errorMessage = 'email is invalid';
+                    errorMessage = 'Email is invalid';
                     break;
                 }
+              case 'phoneNum': {
+                    errorMessage = 'Phone Number is invalid';
+              }
             }
 
             fieldNameError.innerHTML = errorMessage;
@@ -107,17 +110,20 @@ function onClick(event) {
     validateField(firstNameElement, 'firstName');
     validateField(lastNameElement, 'lastName');
     validateField(emailElement, 'email');
+    validateField(phoneElement, 'phoneNum');
 
     // ASSIGNMENT 11/8/2020
     // Use the validateField function to get the PhoneNumber field
     // working just like the 3 previous fields
 
-    const phonenum = phoneElement.value;
+  
+      //(OLD)This is an alert message function, previously used
+    /*const phonenum = phoneElement.value;
     if (!isValidPhoneNumber(phonenum)) {
         alert('Phone Number is invalid');
     } else {
         alert('Phone Number is Valid');
-    }
+    }*/
 }
 
 
